@@ -6,16 +6,46 @@
     <title>Sri Poorna Anugraha Mini Hall | Thudiyalur, Coimbatore</title>
     <meta name="description" content="Book Sri Poorna Anugraha Mini Hall on Thangavel Street, NGGO Colony, Thudiyalur for receptions, birthday parties, baby showers, and family gatherings. 100% power backup.">
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#fdfbf7',
+                            100: '#f7f0e1',
+                            200: '#eddcb7',
+                            500: '#c59a3f',
+                            600: '#b0822e',
+                            700: '#8e6320',
+                            800: '#6b4919',
+                            900: '#523714',
+                        },
+                        brand: {
+                            brown: '#5a3818',
+                            dark: '#3d250f',
+                            cream: '#fcf8f2',
+                            red: '#c0392b'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        .scrollbar-none::-webkit-scrollbar {
-            display: none;
-        }
-        .scrollbar-none {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+        .scrollbar-none::-webkit-scrollbar { display: none; }
+        .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 
     <!-- LocalBusiness Schema Markup -->
@@ -43,133 +73,327 @@
     }
     </script>
 </head>
-<body class="bg-stone-100 text-slate-800 font-sans antialiased">
+<body class="bg-[#FAF7F2] text-slate-800 font-sans antialiased">
 
     <!-- Header Navigation -->
-    <header class="bg-white border-b border-stone-200 sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-            <div>
-                <h1 class="text-xl md:text-2xl font-bold text-amber-900 tracking-tight">Sri Poorna Anugraha Mini Hall</h1>
-                <p class="text-xs text-slate-500">NGGO Colony, Thudiyalur, Coimbatore</p>
+    <header class="bg-white/95 backdrop-blur-md border-b border-stone-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-full bg-brand-brown text-amber-200 flex items-center justify-center font-serif text-xs font-bold border border-gold-500">SPA</div>
+                <div>
+                    <h1 class="text-base font-bold text-brand-dark font-serif tracking-tight">Sri Poorna Anugraha Mini Hall</h1>
+                    <p class="text-[11px] text-slate-500">Thangavel Street, NGGO Colony, Thudiyalur, Coimbatore</p>
+                </div>
             </div>
-            <a href="tel:9442071354" class="hidden sm:inline-flex items-center text-sm font-semibold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-200 hover:bg-emerald-100 transition">
-                <svg class="w-4 h-4 mr-1.5 fill-current" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
-                Call: 9442071354
-            </a>
+            <div class="hidden md:flex items-center space-x-6 text-xs font-semibold text-slate-600">
+                <a href="#overview" class="hover:text-brand-brown">Overview</a>
+                <a href="#spaces" class="hover:text-brand-brown">Venue Spaces</a>
+                <a href="#accessibility" class="hover:text-brand-brown">Accessibility</a>
+                <a href="#reservation" class="hover:text-brand-brown">Reservation</a>
+            </div>
+            <div class="flex items-center space-x-3">
+                <a href="tel:9442071354" class="text-xs font-bold text-slate-800 flex items-center space-x-1 border border-stone-300 px-3 py-1.5 rounded-lg hover:bg-stone-50">
+                    <span>📞</span> <span>+91 94420 71354</span>
+                </a>
+                <a href="#reservation" class="bg-brand-brown hover:bg-brand-dark text-white text-xs font-bold px-4 py-2 rounded-lg shadow-sm transition">
+                    Book Hall Now
+                </a>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-amber-900 text-white py-12 px-4 text-center">
-        <div class="max-w-3xl mx-auto">
-            <span class="bg-amber-800 text-amber-200 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-3">Thudiyalur's Premier Venue</span>
-            <h2 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">Celebrate Your Special Moments With Us</h2>
-            <p class="text-amber-100 text-base md:text-lg mb-6 leading-relaxed">Perfect venue for Receptions, Birthday Parties, Baby Showers, and Family Get-Togethers with 100% Uninterrupted Power Backup.</p>
-            <a href="#booking-section" class="bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold px-6 py-3 rounded-xl transition shadow-md inline-block">Check Available Dates &rarr;</a>
+    <section class="relative bg-stone-900 text-white min-h-[500px] flex items-center py-16 px-4 bg-cover bg-center overflow-hidden" style="background-image: linear-gradient(to right, rgba(0,0,0,0.75), rgba(0,0,0,0.45)), url('stage decor 2.jpeg');">
+        <div class="max-w-5xl mx-auto w-full relative z-10">
+            <span class="inline-block text-[11px] font-bold text-amber-300 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full uppercase tracking-wider mb-4 border border-amber-400/30">
+                ⭐ Rated 4.6/5 · Thudiyalur's Premier Sacred Venue & Reception Hall
+            </span>
+            <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold font-serif leading-tight mb-4 text-amber-50">
+                Simply the Perfect Space<br>for Your Special Moments.
+            </h2>
+            <p class="text-stone-200 text-sm md:text-base max-w-2xl mb-8 leading-relaxed font-normal">
+                A modern, clean, and elegant venue for Birthday Parties, Family Get-Togethers, Sacred Ceremonies, Receptions, Engagement Events, Sangeet Functions, and Corporate Gatherings with 100% Generator Backup.
+            </p>
+
+            <div class="flex flex-wrap gap-3 mb-8">
+                <a href="#reservation" class="bg-brand-brown hover:bg-gold-700 text-white font-bold text-xs md:text-sm px-6 py-3.5 rounded-lg transition shadow-lg border border-gold-500/40 flex items-center space-x-2">
+                    <span>BOOK ON WHATSAPP & RESERVE</span>
+                </a>
+                <a href="#spaces" class="bg-white/90 hover:bg-white text-slate-900 font-bold text-xs md:text-sm px-6 py-3.5 rounded-lg transition shadow-md flex items-center space-x-2">
+                    <span>APPLY CUSTOM STAGE DECOR SETTINGS</span>
+                </a>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-6 text-xs text-amber-200/90 font-medium">
+                <span class="flex items-center space-x-1.5">✓ 100% POWER BACKUP</span>
+                <span class="flex items-center space-x-1.5">✓ AIR CONDITIONED MAIN HALL</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Quick Pills Bar -->
+    <section class="max-w-6xl mx-auto px-4 -mt-6 relative z-20">
+        <div class="bg-white rounded-2xl shadow-lg border border-stone-200/80 p-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div class="p-2 border-r border-stone-100 last:border-none flex items-center space-x-3 justify-center">
+                <div class="w-8 h-8 rounded-full bg-amber-50 text-brand-brown flex items-center justify-center font-bold text-sm shrink-0">⚡</div>
+                <div class="text-left">
+                    <h4 class="text-xs font-bold text-slate-900">100% Generator Backup</h4>
+                    <p class="text-[10px] text-slate-500">Uninterrupted power supply</p>
+                </div>
+            </div>
+            <div class="p-2 border-r border-stone-100 last:border-none flex items-center space-x-3 justify-center">
+                <div class="w-8 h-8 rounded-full bg-amber-50 text-brand-brown flex items-center justify-center font-bold text-sm shrink-0">🏛️</div>
+                <div class="text-left">
+                    <h4 class="text-xs font-bold text-slate-900">2-Floor Dedicated Halls</h4>
+                    <p class="text-[10px] text-slate-500">Air Conditioned & Stage Option</p>
+                </div>
+            </div>
+            <div class="p-2 border-r border-stone-100 last:border-none flex items-center space-x-3 justify-center">
+                <div class="w-8 h-8 rounded-full bg-amber-50 text-brand-brown flex items-center justify-center font-bold text-sm shrink-0">🍽️</div>
+                <div class="text-left">
+                    <h4 class="text-xs font-bold text-slate-900">1-Floor Dining Facility</h4>
+                    <p class="text-[10px] text-slate-500">25 Seated / Batch Capacity</p>
+                </div>
+            </div>
+            <div class="p-2 border-r border-stone-100 last:border-none flex items-center space-x-3 justify-center">
+                <div class="w-8 h-8 rounded-full bg-amber-50 text-brand-brown flex items-center justify-center font-bold text-sm shrink-0">♿</div>
+                <div class="text-left">
+                    <h4 class="text-xs font-bold text-slate-900">Elderly Friendly Access</h4>
+                    <p class="text-[10px] text-slate-500">Auto drop-off & direct front ramp</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Auto-Swiping Photo Carousel -->
-    <section class="bg-amber-50/70 py-6 border-y border-amber-200/60 overflow-hidden relative">
+    <section class="bg-[#FAF7F2] py-8 border-b border-stone-200/60 overflow-hidden relative">
         <div class="max-w-6xl mx-auto px-4">
-            
             <div id="trust-carousel" class="flex items-center gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-none py-2 cursor-grab active:cursor-grabbing relative z-10">
-                
-                <!-- Slide 1: Stage Decor 2 Background -->
-                <div class="snap-center shrink-0 w-[260px] md:w-[300px] h-[190px] rounded-2xl border border-amber-200/80 shadow-md flex items-end p-3 bg-cover bg-center overflow-hidden relative" style="background-image: url('stage decor 2.jpeg');">
+                <div class="snap-center shrink-0 w-[280px] md:w-[320px] h-[180px] rounded-2xl border border-stone-300 shadow-md flex items-end p-3 bg-cover bg-center overflow-hidden relative" style="background-image: url('stage decor 2.jpeg');">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     <div class="w-full bg-white/95 p-3 rounded-xl shadow-sm border border-stone-100 flex items-center space-x-3 backdrop-blur-sm relative z-10">
-                        <div class="p-2 bg-amber-100 rounded-lg text-amber-800 shrink-0">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        </div>
+                        <div class="text-xl p-2 bg-amber-100 rounded-lg shrink-0">⭐</div>
                         <div>
-                            <h4 class="text-lg font-extrabold text-slate-900">4.6 / 5.0</h4>
-                            <p class="text-[11px] text-slate-600 font-medium leading-tight">Google Rating (65+ Reviews)</p>
+                            <h4 class="text-sm font-extrabold text-slate-900">4.6 / 5.0 Google Rating</h4>
+                            <p class="text-[10px] text-slate-600 font-medium">Over 65+ Verified Guest Reviews</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 2: Building Exterior Background -->
-                <div class="snap-center shrink-0 w-[260px] md:w-[300px] h-[190px] rounded-2xl border border-amber-200/80 shadow-md flex items-end p-3 bg-cover bg-center overflow-hidden relative" style="background-image: url('hall photo.jpeg');">
+                <div class="snap-center shrink-0 w-[280px] md:w-[320px] h-[180px] rounded-2xl border border-stone-300 shadow-md flex items-end p-3 bg-cover bg-center overflow-hidden relative" style="background-image: url('hall photo.jpeg');">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     <div class="w-full bg-white/95 p-3 rounded-xl shadow-sm border border-stone-100 flex items-center space-x-3 backdrop-blur-sm relative z-10">
-                        <div class="p-2 bg-amber-100 rounded-lg text-amber-800 shrink-0">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
-                        </div>
+                        <div class="text-xl p-2 bg-amber-100 rounded-lg shrink-0">🎉</div>
                         <div>
-                            <h4 class="text-lg font-extrabold text-slate-900">120+ Events</h4>
-                            <p class="text-[11px] text-slate-600 font-medium leading-tight">Receptions & Gatherings</p>
+                            <h4 class="text-sm font-extrabold text-slate-900">120+ Hosted Events</h4>
+                            <p class="text-[10px] text-slate-600 font-medium">Memorable Receptions & Functions</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 3: Power Backup Background -->
-                <div class="snap-center shrink-0 w-[260px] md:w-[300px] h-[190px] rounded-2xl border border-amber-200/80 shadow-md flex items-end p-3 bg-cover bg-center overflow-hidden relative" style="background-image: url('hall photo.jpeg');">
+                <div class="snap-center shrink-0 w-[280px] md:w-[320px] h-[180px] rounded-2xl border border-stone-300 shadow-md flex items-end p-3 bg-cover bg-center overflow-hidden relative" style="background-image: url('hall photo.jpeg');">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     <div class="w-full bg-white/95 p-3 rounded-xl shadow-sm border border-stone-100 flex items-center space-x-3 backdrop-blur-sm relative z-10">
-                        <div class="p-2 bg-amber-100 rounded-lg text-amber-800 shrink-0">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.57l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.57l7-10a1 1 0 011.12-.384z" clip-rule="evenodd"/></svg>
-                        </div>
+                        <div class="text-xl p-2 bg-amber-100 rounded-lg shrink-0">⚡</div>
                         <div>
-                            <h4 class="text-lg font-extrabold text-slate-900">100% Backup</h4>
-                            <p class="text-[11px] text-slate-600 font-medium leading-tight">Uninterrupted Power</p>
+                            <h4 class="text-sm font-extrabold text-slate-900">100% Uninterrupted Power</h4>
+                            <p class="text-[10px] text-slate-600 font-medium">Heavy Duty Diesel Generator Backup</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 4: Hall Map Background -->
-                <div class="snap-center shrink-0 w-[260px] md:w-[300px] h-[190px] rounded-2xl border border-amber-200/80 shadow-md flex items-end p-3 bg-cover bg-center overflow-hidden relative" style="background-image: url('hall map.jpg');">
+                <div class="snap-center shrink-0 w-[280px] md:w-[320px] h-[180px] rounded-2xl border border-stone-300 shadow-md flex items-end p-3 bg-cover bg-center overflow-hidden relative" style="background-image: url('hall map.jpg');">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     <div class="w-full bg-white/95 p-3 rounded-xl shadow-sm border border-stone-100 flex items-center space-x-3 backdrop-blur-sm relative z-10">
-                        <div class="p-2 bg-amber-100 rounded-lg text-amber-800 shrink-0">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
-                        </div>
+                        <div class="text-xl p-2 bg-amber-100 rounded-lg shrink-0">📍</div>
                         <div>
-                            <h4 class="text-lg font-extrabold text-slate-900">Prime Location</h4>
-                            <p class="text-[11px] text-slate-600 font-medium leading-tight">Thangavel St, NGGO Colony</p>
+                            <h4 class="text-sm font-extrabold text-slate-900">Thudiyalur Prime Location</h4>
+                            <p class="text-[10px] text-slate-600 font-medium">Easy Access from Mettupalayam Road</p>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Venue Highlights & Specifications -->
-    <section class="max-w-6xl mx-auto px-4 py-12">
-        <h3 class="text-2xl font-bold text-center text-slate-900 mb-8">Venue Facilities & Capacity</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-xs">
-                <div class="w-10 h-10 bg-amber-100 text-amber-800 rounded-xl flex items-center justify-center font-bold mb-4">1</div>
-                <h4 class="text-lg font-bold text-slate-900 mb-2">First Floor Hall</h4>
-                <p class="text-sm text-slate-600 leading-relaxed">Ideal for intimate gatherings. <strong>60 Seated / 100 Floating</strong> capacity. Staircase access with direct front drop-off.</p>
+    <!-- Curated Spaces Section -->
+    <section id="spaces" class="max-w-6xl mx-auto px-4 py-14">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+            <div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-amber-800">PREMIUM HALL SPACES & FLOORS</span>
+                <h3 class="text-2xl md:text-3xl font-extrabold font-serif text-brand-dark mt-1">Curated Spaces for Life's Sacred Milestones</h3>
+                <p class="text-xs md:text-sm text-slate-600 mt-2 max-w-2xl">
+                    Whether you are planning a 60-guest intimate birthday or a 150-guest grand reception, our 2-floor layout and dedicated dining hall ensure complete privacy, high comfort, and zero clutter.
+                </p>
+            </div>
+            <div class="mt-4 md:mt-0">
+                <a href="#reservation" class="text-xs font-bold text-amber-800 hover:text-amber-900 underline">Check All Available Dates &rarr;</a>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-2xl border border-stone-200 p-5 shadow-xs flex flex-col justify-between">
+                <div>
+                    <span class="text-[10px] font-bold bg-stone-100 text-stone-700 px-2.5 py-1 rounded-full uppercase">FLOOR 01</span>
+                    <h4 class="text-base font-bold text-brand-dark mt-3 mb-1">First Floor Banquet Hall</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-4">Ideal for compact functions, intimate family gatherings, corporate meets, and small traditional ceremonies.</p>
+
+                    <div class="bg-stone-50 rounded-xl p-3 mb-4 grid grid-cols-2 gap-2 text-center border border-stone-100">
+                        <div>
+                            <div class="text-[10px] font-medium text-slate-400">Seated Capacity</div>
+                            <div class="text-lg font-extrabold text-brand-dark">60</div>
+                            <div class="text-[9px] text-slate-400">Seated Guests</div>
+                        </div>
+                        <div>
+                            <div class="text-[10px] font-medium text-slate-400">Floating Capacity</div>
+                            <div class="text-lg font-extrabold text-brand-dark">100</div>
+                            <div class="text-[9px] text-slate-400">Max Capacity</div>
+                        </div>
+                    </div>
+
+                    <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                        <li class="flex items-start space-x-1.5"><span class="text-amber-600 font-bold">✓</span><span>Fully Air-Conditioned Main Hall</span></li>
+                        <li class="flex items-start space-x-1.5"><span class="text-amber-600 font-bold">✓</span><span>Direct Staircase Access & Front Entry</span></li>
+                        <li class="flex items-start space-x-1.5"><span class="text-amber-600 font-bold">✓</span><span>Independent Sound Setup Ready</span></li>
+                    </ul>
+                </div>
+
+                <a href="#reservation" class="w-full bg-stone-100 hover:bg-stone-200 text-slate-800 text-xs font-bold py-2.5 rounded-xl text-center transition">CHOOSE FIRST FLOOR</a>
             </div>
 
-            <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-xs">
-                <div class="w-10 h-10 bg-amber-100 text-amber-800 rounded-xl flex items-center justify-center font-bold mb-4">2</div>
-                <h4 class="text-lg font-bold text-slate-900 mb-2">Second Floor Hall</h4>
-                <p class="text-sm text-slate-600 leading-relaxed">Includes built-in raised stage. <strong>100 Seated / 150 Floating</strong> capacity. Perfect for receptions & stage programs.</p>
+            <!-- Card 2 (Featured) -->
+            <div class="bg-white rounded-2xl border-2 border-brand-red p-5 shadow-md flex flex-col justify-between relative">
+                <span class="absolute -top-3 right-4 bg-brand-red text-white text-[9px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider">MOST POPULAR</span>
+                <div>
+                    <span class="text-[10px] font-bold bg-amber-100 text-amber-900 px-2.5 py-1 rounded-full uppercase">FLOOR 02</span>
+                    <h4 class="text-base font-bold text-brand-dark mt-3 mb-1">Second Floor Grand Hall</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-4">Built-in elevated stage hall designed for wedding receptions, engagement ceremonies, birthday bashes, and cultural programs.</p>
+
+                    <div class="bg-amber-50/60 rounded-xl p-3 mb-4 grid grid-cols-2 gap-2 text-center border border-amber-100">
+                        <div>
+                            <div class="text-[10px] font-medium text-slate-400">Seated Capacity</div>
+                            <div class="text-lg font-extrabold text-brand-dark">100</div>
+                            <div class="text-[9px] text-slate-400">Seated Guests</div>
+                        </div>
+                        <div>
+                            <div class="text-[10px] font-medium text-slate-400">Floating Capacity</div>
+                            <div class="text-lg font-extrabold text-brand-red">150</div>
+                            <div class="text-[9px] text-slate-400">With Stage Area</div>
+                        </div>
+                    </div>
+
+                    <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                        <li class="flex items-start space-x-1.5"><span class="text-brand-red font-bold">✓</span><span>Built-in Elevated Stage Structure</span></li>
+                        <li class="flex items-start space-x-1.5"><span class="text-brand-red font-bold">✓</span><span>Customizable Backdrop Light Rigging</span></li>
+                        <li class="flex items-start space-x-1.5"><span class="text-brand-red font-bold">✓</span><span>Full Central Air Conditioning</span></li>
+                    </ul>
+                </div>
+
+                <a href="#reservation" class="w-full bg-brand-red hover:bg-red-800 text-white text-xs font-bold py-2.5 rounded-xl text-center transition">CHOOSE SECOND FLOOR</a>
             </div>
 
-            <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-xs">
-                <div class="w-10 h-10 bg-amber-100 text-amber-800 rounded-xl flex items-center justify-center font-bold mb-4">3</div>
-                <h4 class="text-lg font-bold text-slate-900 mb-2">Dining & Amenities</h4>
-                <p class="text-sm text-slate-600 leading-relaxed">Common dining facility (<strong>25 Seated</strong> per batch). 100% generator backup & street parking available.</p>
+            <!-- Card 3 -->
+            <div class="bg-white rounded-2xl border border-stone-200 p-5 shadow-xs flex flex-col justify-between">
+                <div>
+                    <span class="text-[10px] font-bold bg-stone-100 text-stone-700 px-2.5 py-1 rounded-full uppercase">DINING AREA</span>
+                    <h4 class="text-base font-bold text-brand-dark mt-3 mb-1">Common Dining Area</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-4">Dedicated, hygienic dining space attached on the ground level for seamless batch catering without disturbing main hall events.</p>
+
+                    <div class="bg-stone-50 rounded-xl p-3 mb-4 grid grid-cols-2 gap-2 text-center border border-stone-100">
+                        <div>
+                            <div class="text-[10px] font-medium text-slate-400">Batch Capacity</div>
+                            <div class="text-lg font-extrabold text-brand-dark">25 Guests / Batch</div>
+                            <div class="text-[9px] text-slate-400">Seated Dining</div>
+                        </div>
+                        <div>
+                            <div class="text-[10px] font-medium text-slate-400">Service</div>
+                            <div class="text-xs font-bold text-slate-800 mt-2">Buffet & Banana Leaf Options</div>
+                        </div>
+                    </div>
+
+                    <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                        <li class="flex items-start space-x-1.5"><span class="text-amber-600 font-bold">✓</span><span>Hygienic Handwash Station & Washrooms</span></li>
+                        <li class="flex items-start space-x-1.5"><span class="text-amber-600 font-bold">✓</span><span>Direct Ground Floor Kitchen Access</span></li>
+                    </ul>
+                </div>
+
+                <a href="#reservation" class="w-full bg-stone-100 hover:bg-stone-200 text-slate-800 text-xs font-bold py-2.5 rounded-xl text-center transition">VIEW DINING SPECS</a>
             </div>
 
+            <!-- Card 4 -->
+            <div class="bg-white rounded-2xl border border-stone-200 p-5 shadow-xs flex flex-col justify-between">
+                <div>
+                    <span class="text-[10px] font-bold bg-stone-100 text-stone-700 px-2.5 py-1 rounded-full uppercase">INFRASTRUCTURE</span>
+                    <h4 class="text-base font-bold text-brand-dark mt-3 mb-1">Venue Infrastructure</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-4">Complete venue amenities including power backups, street parking convenience, and dedicated staff management.</p>
+
+                    <div class="bg-stone-50 rounded-xl p-3 mb-4 grid grid-cols-2 gap-2 text-center border border-stone-100">
+                        <div>
+                            <div class="text-[10px] font-medium text-slate-400">Power Backup</div>
+                            <div class="text-lg font-extrabold text-brand-dark">100%</div>
+                            <div class="text-[9px] text-slate-400">Diesel Generator</div>
+                        </div>
+                        <div>
+                            <div class="text-[10px] font-medium text-slate-400">Location</div>
+                            <div class="text-xs font-bold text-slate-800 mt-2">NGGO Colony, Thudiyalur</div>
+                        </div>
+                    </div>
+
+                    <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                        <li class="flex items-start space-x-1.5"><span class="text-amber-600 font-bold">✓</span><span>Auto & Cab Direct Drop-off Point</span></li>
+                        <li class="flex items-start space-x-1.5"><span class="text-amber-600 font-bold">✓</span><span>Ample Street Parking for Two-Wheelers</span></li>
+                    </ul>
+                </div>
+
+                <a href="#reservation" class="w-full bg-stone-100 hover:bg-stone-200 text-slate-800 text-xs font-bold py-2.5 rounded-xl text-center transition">EXPLORE FULL SPECS</a>
+            </div>
         </div>
     </section>
 
-    <!-- Interactive 6-Step Booking Flow -->
-    <section id="booking-section" class="max-w-4xl mx-auto px-4 py-8">
+    <!-- Arrival, Transit & Elder Accessibility -->
+    <section id="accessibility" class="max-w-6xl mx-auto px-4 py-8">
+        <div class="mb-6">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-800">SMOOTH GUEST ARRIVAL</span>
+            <h3 class="text-2xl font-extrabold font-serif text-brand-dark">Arrival, Transit & Elder Accessibility</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <div class="bg-white rounded-2xl border border-stone-200 p-5">
+                <div class="w-10 h-10 rounded-full bg-amber-100 text-brand-brown flex items-center justify-center font-bold text-base mb-3">🚗</div>
+                <h4 class="text-sm font-bold text-slate-900 mb-1">Direct Front Entrance Drop-Off Access</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Guests arriving by cars or autos can pull up directly at the front entrance gate for immediate drop-off before parking vehicles nearby.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-stone-200 p-5">
+                <div class="w-10 h-10 rounded-full bg-amber-100 text-brand-brown flex items-center justify-center font-bold text-base mb-3">🛺</div>
+                <h4 class="text-sm font-bold text-slate-900 mb-1">Cab & Auto Transit Friendly</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Easy pickup and drop navigation for Uber, Rapido, and local auto drivers along Thangavel Street.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-stone-200 p-5">
+                <div class="w-10 h-10 rounded-full bg-amber-100 text-brand-brown flex items-center justify-center font-bold text-base mb-3">🅿️</div>
+                <h4 class="text-sm font-bold text-slate-900 mb-1">Street Parking Convenience</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Peaceful neighborhood street with convenient parking spaces for 2-wheelers and 4-wheelers around the venue.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive 6-Step Hall Reservation Section -->
+    <section id="reservation" class="max-w-4xl mx-auto px-4 py-12">
+        <div class="text-center mb-8">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-800">ONLINE BOOKING WIZARD</span>
+            <h3 class="text-3xl font-extrabold font-serif text-brand-dark">Interactive 6-Step Hall Reservation</h3>
+            <p class="text-xs md:text-sm text-slate-500 mt-1">Select your date, choose your floor, pick your decor, and submit via WhatsApp.</p>
+        </div>
+
         <div class="bg-white rounded-3xl border border-stone-200 shadow-xl overflow-hidden p-6 md:p-10">
             
             <!-- Step Indicators -->
             <div class="flex items-center justify-between mb-8 pb-4 border-b border-stone-200">
                 <div class="text-xs font-bold uppercase tracking-wider text-amber-800" id="step-indicator">Step 1 of 6</div>
                 <div class="flex space-x-1" id="step-dots">
-                    <span class="w-3 h-3 rounded-full bg-amber-800"></span>
+                    <span class="w-3 h-3 rounded-full bg-brand-brown"></span>
                     <span class="w-3 h-3 rounded-full bg-stone-300"></span>
                     <span class="w-3 h-3 rounded-full bg-stone-300"></span>
                     <span class="w-3 h-3 rounded-full bg-stone-300"></span>
@@ -180,201 +404,210 @@
 
             <!-- STEP 1: Date Selection Grid -->
             <div id="step-1" class="booking-step">
-                <h3 class="text-2xl font-bold text-slate-900 mb-2">Select Booking Date</h3>
-                <p class="text-sm text-slate-500 mb-6">Green dates are available. Red dates are already booked.</p>
+                <h4 class="text-xl font-bold text-slate-900 mb-1">Step 1: Choose Your Function / Event Date</h4>
+                <p class="text-xs text-slate-500 mb-6">Green dates are available. Red dates are already reserved.</p>
                 
                 <div class="flex items-center justify-between mb-4">
-                    <button onclick="changeMonth(-1)" class="p-2 border border-stone-300 rounded-xl hover:bg-stone-50 text-sm font-semibold">&larr; Prev</button>
-                    <h4 id="calendar-month-year" class="text-base font-bold text-slate-900"></h4>
-                    <button onclick="changeMonth(1)" class="p-2 border border-stone-300 rounded-xl hover:bg-stone-50 text-sm font-semibold">Next &rarr;</button>
+                    <button onclick="changeMonth(-1)" class="p-2 border border-stone-300 rounded-xl hover:bg-stone-50 text-xs font-semibold">&larr; Prev</button>
+                    <h5 id="calendar-month-year" class="text-sm font-bold text-slate-900"></h5>
+                    <button onclick="changeMonth(1)" class="p-2 border border-stone-300 rounded-xl hover:bg-stone-50 text-xs font-semibold">Next &rarr;</button>
                 </div>
 
                 <!-- Calendar Grid -->
-                <div class="grid grid-cols-7 gap-2 text-center text-xs font-semibold text-slate-400 mb-2">
+                <div class="grid grid-cols-7 gap-2 text-center text-[11px] font-semibold text-slate-400 mb-2">
                     <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
                 </div>
-                <div id="calendar-days" class="grid grid-cols-7 gap-2"></div>
+                <div id="calendar-days" class="grid grid-cols-7 gap-2 mb-8"></div>
 
-                <div class="mt-8 flex justify-end">
-                    <button onclick="nextStep(2)" id="btn-step-1" disabled class="bg-stone-300 text-slate-500 font-bold px-6 py-3 rounded-xl cursor-not-allowed transition">Continue &rarr;</button>
+                <div class="flex justify-end">
+                    <button onclick="nextStep(2)" id="btn-step-1" disabled class="bg-stone-300 text-slate-500 font-bold px-6 py-3 rounded-xl cursor-not-allowed text-xs transition">NEXT STEP: FLOOR SELECTION &rarr;</button>
                 </div>
             </div>
 
             <!-- STEP 2: Hall Floor Selection -->
             <div id="step-2" class="booking-step hidden">
-                <h3 class="text-2xl font-bold text-slate-900 mb-2">Choose Hall Floor</h3>
-                <p class="text-sm text-slate-500 mb-6">Select the capacity that fits your event.</p>
+                <h4 class="text-xl font-bold text-slate-900 mb-1">Step 2: Choose Hall Floor</h4>
+                <p class="text-xs text-slate-500 mb-6">Select the capacity option that fits your event.</p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                    <div onclick="selectHall('First Floor (60 Seated / 100 Floating)')" id="hall-option-1" class="border-2 border-stone-200 p-5 rounded-2xl cursor-pointer hover:border-amber-700 transition">
-                        <h4 class="font-bold text-lg text-slate-900">First Floor Hall</h4>
-                        <p class="text-sm text-slate-600 mt-1">Capacity: 60 Seated / 100 Floating</p>
+                    <div onclick="selectHall('First Floor Banquet Hall (60 Seated / 100 Floating)')" id="hall-option-1" class="border-2 border-stone-200 p-5 rounded-2xl cursor-pointer hover:border-brand-brown transition">
+                        <h5 class="font-bold text-base text-slate-900">First Floor Banquet Hall</h5>
+                        <p class="text-xs text-slate-600 mt-1">Capacity: 60 Seated / 100 Floating</p>
                     </div>
-                    <div onclick="selectHall('Second Floor with Stage (100 Seated / 150 Floating)')" id="hall-option-2" class="border-2 border-stone-200 p-5 rounded-2xl cursor-pointer hover:border-amber-700 transition">
-                        <h4 class="font-bold text-lg text-slate-900">Second Floor Hall</h4>
-                        <p class="text-sm text-slate-600 mt-1">Capacity: 100 Seated / 150 Floating (With Stage)</p>
+                    <div onclick="selectHall('Second Floor Grand Hall (100 Seated / 150 Floating)')" id="hall-option-2" class="border-2 border-stone-200 p-5 rounded-2xl cursor-pointer hover:border-brand-brown transition">
+                        <h5 class="font-bold text-base text-slate-900">Second Floor Grand Hall</h5>
+                        <p class="text-xs text-slate-600 mt-1">Capacity: 100 Seated / 150 Floating (With Stage)</p>
                     </div>
                 </div>
 
                 <div class="flex justify-between">
-                    <button onclick="prevStep(1)" class="border border-stone-300 text-slate-700 font-semibold px-6 py-3 rounded-xl">Back</button>
-                    <button onclick="nextStep(3)" id="btn-step-2" disabled class="bg-stone-300 text-slate-500 font-bold px-6 py-3 rounded-xl cursor-not-allowed">Continue &rarr;</button>
+                    <button onclick="prevStep(1)" class="border border-stone-300 text-slate-700 font-semibold px-6 py-3 rounded-xl text-xs">Back</button>
+                    <button onclick="nextStep(3)" id="btn-step-2" disabled class="bg-stone-300 text-slate-500 font-bold px-6 py-3 rounded-xl cursor-not-allowed text-xs">Continue &rarr;</button>
                 </div>
             </div>
 
             <!-- STEP 3: Stage Decor Gallery Grid -->
             <div id="step-3" class="booking-step hidden">
-                <h3 class="text-2xl font-bold text-slate-900 mb-2">Stage Decor Selection</h3>
-                <p class="text-sm text-slate-500 mb-6">Choose from our standard 12 stage decors or bring your external decorator team.</p>
+                <h4 class="text-xl font-bold text-slate-900 mb-1">Step 3: Stage Decor Selection</h4>
+                <p class="text-xs text-slate-500 mb-6">Select from our 12 stage decors or bring your own external decorator team.</p>
                 
                 <div class="mb-4">
-                    <button onclick="selectDecor('Bringing External Decorator')" id="decor-option-external" class="w-full border-2 border-stone-200 p-4 rounded-2xl text-left hover:border-amber-700 transition flex justify-between items-center">
+                    <button onclick="selectDecor('Bringing External Decorator')" id="decor-option-external" class="w-full border-2 border-stone-200 p-4 rounded-2xl text-left hover:border-brand-brown transition flex justify-between items-center">
                         <div>
-                            <h4 class="font-bold text-slate-900">Bringing External Decorator</h4>
-                            <p class="text-xs text-slate-500">I will handle stage decoration independently.</p>
+                            <h5 class="font-bold text-slate-900 text-sm">Bringing External Decorator</h5>
+                            <p class="text-[11px] text-slate-500">I will handle stage decoration independently.</p>
                         </div>
-                        <span class="text-xs font-semibold bg-stone-100 text-slate-700 px-3 py-1 rounded-lg">Skip Decor Selection</span>
+                        <span class="text-[10px] font-semibold bg-stone-100 text-slate-700 px-3 py-1 rounded-lg">Skip Decor</span>
                     </button>
                 </div>
 
-                <!-- Explicit 12-Decor Grid (Original Markup Restored) -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mb-8 max-h-[380px] overflow-y-auto p-1" id="decor-grid">
-                    <div onclick="selectDecor('Stage Decor 1')" id="decor-card-stage-decor-1" class="decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-amber-700 transition p-1 bg-white">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mb-8 max-h-[360px] overflow-y-auto p-1" id="decor-grid">
+                    <div onclick="selectDecor('Stage Decor 1')" id="decor-card-stage-decor-1" class="decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-brand-brown transition p-1 bg-white">
                         <img src="stage decor 1.jpeg" alt="Stage Decor 1" class="w-full h-24 object-cover rounded-lg mb-2" onerror="this.src='https://via.placeholder.com/150?text=Stage+Decor+1'">
                         <p class="text-xs font-bold text-center text-slate-800">Stage Decor 1</p>
                     </div>
-                    <div onclick="selectDecor('Stage Decor 2')" id="decor-card-stage-decor-2" class="decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-amber-700 transition p-1 bg-white">
+                    <div onclick="selectDecor('Stage Decor 2')" id="decor-card-stage-decor-2" class="decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-brand-brown transition p-1 bg-white">
                         <img src="stage decor 2.jpeg" alt="Stage Decor 2" class="w-full h-24 object-cover rounded-lg mb-2" onerror="this.src='https://via.placeholder.com/150?text=Stage+Decor+2'">
                         <p class="text-xs font-bold text-center text-slate-800">Stage Decor 2</p>
                     </div>
-                    <div onclick="selectDecor('Stage Decor 3')" id="decor-card-stage-decor-3" class="decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-amber-700 transition p-1 bg-white">
+                    <div onclick="selectDecor('Stage Decor 3')" id="decor-card-stage-decor-3" class="decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-brand-brown transition p-1 bg-white">
                         <img src="stage decor 3.jpeg" alt="Stage Decor 3" class="w-full h-24 object-cover rounded-lg mb-2" onerror="this.src='https://via.placeholder.com/150?text=Stage+Decor+3'">
                         <p class="text-xs font-bold text-center text-slate-800">Stage Decor 3</p>
                     </div>
-                    <div onclick="selectDecor('Stage Decor 4')" id="decor-card-stage-decor-4" class="decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-amber-700 transition p-1 bg-white">
+                    <div onclick="selectDecor('Stage Decor 4')" id="decor-card-stage-decor-4" class="decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-brand-brown transition p-1 bg-white">
                         <img src="stage decor 4.jpeg" alt="Stage Decor 4" class="w-full h-24 object-cover rounded-lg mb-2" onerror="this.src='https://via.placeholder.com/150?text=Stage+Decor+4'">
                         <p class="text-xs font-bold text-center text-slate-800">Stage Decor 4</p>
                     </div>
-                    <div onclick="selectDecor('Stage Decor 5')" id="decor-card-stage-decor-5" class="decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-amber-700 transition p-1 bg-white">
+                    <div onclick="selectDecor('Stage Decor 5')" id="decor-card-stage-decor-5" class="decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-brand-brown transition p-1 bg-white">
                         <img src="stage decor 5.jpeg" alt="Stage Decor 5" class="w-full h-24 object-cover rounded-lg mb-2" onerror="this.src='https://via.placeholder.com/150?text=Stage+Decor+5'">
                         <p class="text-xs font-bold text-center text-slate-800">Stage Decor 5</p>
                     </div>
-                    <div onclick="selectDecor('Stage Decor 6')" id="decor-card-stage-decor-6" class="decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-amber-700 transition p-1 bg-white">
+                    <div onclick="selectDecor('Stage Decor 6')" id="decor-card-stage-decor-6" class="decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-brand-brown transition p-1 bg-white">
                         <img src="stage decor 6.jpeg" alt="Stage Decor 6" class="w-full h-24 object-cover rounded-lg mb-2" onerror="this.src='https://via.placeholder.com/150?text=Stage+Decor+6'">
                         <p class="text-xs font-bold text-center text-slate-800">Stage Decor 6</p>
                     </div>
-                    <div onclick="selectDecor('Stage Decor 7')" id="decor-card-stage-decor-7" class="decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-amber-700 transition p-1 bg-white">
+                    <div onclick="selectDecor('Stage Decor 7')" id="decor-card-stage-decor-7" class="decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-brand-brown transition p-1 bg-white">
                         <img src="stage decor 7.jpeg" alt="Stage Decor 7" class="w-full h-24 object-cover rounded-lg mb-2" onerror="this.src='https://via.placeholder.com/150?text=Stage+Decor+7'">
                         <p class="text-xs font-bold text-center text-slate-800">Stage Decor 7</p>
                     </div>
-                    <div onclick="selectDecor('Stage Decor 8')" id="decor-card-stage-decor-8" class="decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-amber-700 transition p-1 bg-white">
+                    <div onclick="selectDecor('Stage Decor 8')" id="decor-card-stage-decor-8" class="decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-brand-brown transition p-1 bg-white">
                         <img src="stage decor 8.jpeg" alt="Stage Decor 8" class="w-full h-24 object-cover rounded-lg mb-2" onerror="this.src='https://via.placeholder.com/150?text=Stage+Decor+8'">
                         <p class="text-xs font-bold text-center text-slate-800">Stage Decor 8</p>
                     </div>
-                    <div onclick="selectDecor('Stage Decor 9')" id="decor-card-stage-decor-9" class="decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-amber-700 transition p-1 bg-white">
+                    <div onclick="selectDecor('Stage Decor 9')" id="decor-card-stage-decor-9" class="decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-brand-brown transition p-1 bg-white">
                         <img src="stage decor 9.jpeg" alt="Stage Decor 9" class="w-full h-24 object-cover rounded-lg mb-2" onerror="this.src='https://via.placeholder.com/150?text=Stage+Decor+9'">
                         <p class="text-xs font-bold text-center text-slate-800">Stage Decor 9</p>
                     </div>
-                    <div onclick="selectDecor('Stage Decor 10')" id="decor-card-stage-decor-10" class="decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-amber-700 transition p-1 bg-white">
+                    <div onclick="selectDecor('Stage Decor 10')" id="decor-card-stage-decor-10" class="decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-brand-brown transition p-1 bg-white">
                         <img src="stage decor 10.jpeg" alt="Stage Decor 10" class="w-full h-24 object-cover rounded-lg mb-2" onerror="this.src='https://via.placeholder.com/150?text=Stage+Decor+10'">
                         <p class="text-xs font-bold text-center text-slate-800">Stage Decor 10</p>
                     </div>
-                    <div onclick="selectDecor('Stage Decor 11')" id="decor-card-stage-decor-11" class="decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-amber-700 transition p-1 bg-white">
+                    <div onclick="selectDecor('Stage Decor 11')" id="decor-card-stage-decor-11" class="decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-brand-brown transition p-1 bg-white">
                         <img src="stage decor 11.jpeg" alt="Stage Decor 11" class="w-full h-24 object-cover rounded-lg mb-2" onerror="this.src='https://via.placeholder.com/150?text=Stage+Decor+11'">
                         <p class="text-xs font-bold text-center text-slate-800">Stage Decor 11</p>
                     </div>
-                    <div onclick="selectDecor('Stage Decor 12')" id="decor-card-stage-decor-12" class="decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-amber-700 transition p-1 bg-white">
+                    <div onclick="selectDecor('Stage Decor 12')" id="decor-card-stage-decor-12" class="decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-brand-brown transition p-1 bg-white">
                         <img src="stage decor 12.jpeg" alt="Stage Decor 12" class="w-full h-24 object-cover rounded-lg mb-2" onerror="this.src='https://via.placeholder.com/150?text=Stage+Decor+12'">
                         <p class="text-xs font-bold text-center text-slate-800">Stage Decor 12</p>
                     </div>
                 </div>
 
                 <div class="flex justify-between">
-                    <button onclick="prevStep(2)" class="border border-stone-300 text-slate-700 font-semibold px-6 py-3 rounded-xl">Back</button>
-                    <button onclick="nextStep(4)" id="btn-step-3" disabled class="bg-stone-300 text-slate-500 font-bold px-6 py-3 rounded-xl cursor-not-allowed">Continue &rarr;</button>
+                    <button onclick="prevStep(2)" class="border border-stone-300 text-slate-700 font-semibold px-6 py-3 rounded-xl text-xs">Back</button>
+                    <button onclick="nextStep(4)" id="btn-step-3" disabled class="bg-stone-300 text-slate-500 font-bold px-6 py-3 rounded-xl cursor-not-allowed text-xs">Continue &rarr;</button>
                 </div>
             </div>
 
             <!-- STEP 4: Customer Details -->
             <div id="step-4" class="booking-step hidden">
-                <h3 class="text-2xl font-bold text-slate-900 mb-2">Your Information</h3>
-                <p class="text-sm text-slate-500 mb-6">Tell us a little bit about your event.</p>
+                <h4 class="text-xl font-bold text-slate-900 mb-1">Step 4: Your Information</h4>
+                <p class="text-xs text-slate-500 mb-6">Enter your name and function purpose.</p>
                 
                 <div class="space-y-4 mb-8">
                     <div>
-                        <label class="block text-sm font-semibold text-slate-700 mb-1">Your Name *</label>
-                        <input type="text" id="cust-name" oninput="validateStep4()" placeholder="e.g., Kumaresh" class="w-full border border-stone-300 rounded-xl p-3 focus:outline-none focus:border-amber-800">
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Your Name *</label>
+                        <input type="text" id="cust-name" oninput="validateStep4()" placeholder="e.g., Kumaresh" class="w-full border border-stone-300 rounded-xl p-3 text-sm focus:outline-none focus:border-brand-brown">
                     </div>
                     <div>
-                        <label class="block text-sm font-semibold text-slate-700 mb-1">Event / Function Purpose *</label>
-                        <input type="text" id="cust-purpose" oninput="validateStep4()" placeholder="e.g., Birthday Party, Baby Shower" class="w-full border border-stone-300 rounded-xl p-3 focus:outline-none focus:border-amber-800">
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Event / Function Purpose *</label>
+                        <input type="text" id="cust-purpose" oninput="validateStep4()" placeholder="e.g., Birthday Party, Baby Shower" class="w-full border border-stone-300 rounded-xl p-3 text-sm focus:outline-none focus:border-brand-brown">
                     </div>
                 </div>
 
                 <div class="flex justify-between">
-                    <button onclick="prevStep(3)" class="border border-stone-300 text-slate-700 font-semibold px-6 py-3 rounded-xl">Back</button>
-                    <button onclick="nextStep(5)" id="btn-step-4" disabled class="bg-stone-300 text-slate-500 font-bold px-6 py-3 rounded-xl cursor-not-allowed">Review Booking &rarr;</button>
+                    <button onclick="prevStep(3)" class="border border-stone-300 text-slate-700 font-semibold px-6 py-3 rounded-xl text-xs">Back</button>
+                    <button onclick="nextStep(5)" id="btn-step-4" disabled class="bg-stone-300 text-slate-500 font-bold px-6 py-3 rounded-xl cursor-not-allowed text-xs">Review Booking &rarr;</button>
                 </div>
             </div>
 
             <!-- STEP 5: Review Summary -->
             <div id="step-5" class="booking-step hidden">
-                <h3 class="text-2xl font-bold text-slate-900 mb-2">Review Your Booking Details</h3>
-                <p class="text-sm text-slate-500 mb-6">Please verify your details before submitting.</p>
+                <h4 class="text-xl font-bold text-slate-900 mb-1">Step 5: Review Your Booking Details</h4>
+                <p class="text-xs text-slate-500 mb-6">Please confirm your selections before sending.</p>
                 
-                <div class="bg-stone-50 p-6 rounded-2xl border border-stone-200 text-sm space-y-3 mb-8">
+                <div class="bg-stone-50 p-6 rounded-2xl border border-stone-200 text-xs space-y-3 mb-8">
                     <p><strong>Name:</strong> <span id="review-name">-</span></p>
                     <p><strong>Purpose:</strong> <span id="review-purpose">-</span></p>
-                    <p><strong>Selected Date:</strong> <span id="review-date" class="text-amber-900 font-bold">-</span></p>
-                    <p><strong>Hall:</strong> <span id="review-hall">-</span></p>
-                    <p><strong>Decor:</strong> <span id="review-decor">-</span></p>
+                    <p><strong>Selected Date:</strong> <span id="review-date" class="text-brand-brown font-bold">-</span></p>
+                    <p><strong>Hall Floor:</strong> <span id="review-hall">-</span></p>
+                    <p><strong>Stage Decor:</strong> <span id="review-decor">-</span></p>
                 </div>
 
                 <div class="flex justify-between">
-                    <button onclick="prevStep(4)" class="border border-stone-300 text-slate-700 font-semibold px-6 py-3 rounded-xl">Back</button>
-                    <button onclick="nextStep(6)" class="bg-amber-800 hover:bg-amber-900 text-white font-bold px-8 py-3 rounded-xl transition">Confirm Details &rarr;</button>
+                    <button onclick="prevStep(4)" class="border border-stone-300 text-slate-700 font-semibold px-6 py-3 rounded-xl text-xs">Back</button>
+                    <button onclick="nextStep(6)" class="bg-brand-brown hover:bg-brand-dark text-white font-bold px-8 py-3 rounded-xl transition text-xs">Confirm Details &rarr;</button>
                 </div>
             </div>
 
             <!-- STEP 6: WhatsApp Checkout Preview -->
             <div id="step-6" class="booking-step hidden text-center py-6">
-                <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center text-3xl mx-auto mb-4 text-emerald-700">
-                    <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.157 4.228 4.301-1.127z"/></svg>
-                </div>
-                <h3 class="text-2xl font-bold text-slate-900 mb-2">Your Booking Summary is Ready!</h3>
-                <p class="text-slate-600 text-sm mb-6 max-w-md mx-auto">Click the button below to send your structured details directly to our WhatsApp (<strong class="text-slate-900">9442071354</strong>) for instant confirmation.</p>
+                <div class="w-14 h-14 bg-emerald-100 rounded-full flex items-center justify-center text-2xl mx-auto mb-4 text-emerald-700">💬</div>
+                <h4 class="text-xl font-bold text-slate-900 mb-1">Step 6: Send Booking Request to WhatsApp</h4>
+                <p class="text-slate-600 text-xs mb-6 max-w-md mx-auto">Click below to transfer your reservation details directly to WhatsApp (<strong class="text-slate-900">9442071354</strong>) for instant confirmation.</p>
                 
-                <div class="bg-stone-50 p-4 rounded-2xl border border-stone-200 text-sm text-slate-700 max-w-md mx-auto mb-6 text-left space-y-1">
+                <div class="bg-stone-50 p-4 rounded-2xl border border-stone-200 text-xs text-slate-700 max-w-md mx-auto mb-6 text-left space-y-1">
                     <p><strong>Date:</strong> <span id="summary-preview-date">-</span></p>
                     <p><strong>Hall:</strong> <span id="summary-preview-hall">-</span></p>
                     <p><strong>Decor:</strong> <span id="summary-preview-decor">-</span></p>
                 </div>
 
-                <a id="whatsapp-link" href="#" target="_blank" class="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-4 rounded-2xl text-base transition shadow-lg space-x-2 mb-4">
-                    <span>Send Booking to WhatsApp &rarr;</span>
+                <a id="whatsapp-link" href="#" target="_blank" class="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-3.5 rounded-2xl text-xs transition shadow-lg space-x-2 mb-4">
+                    <span>SEND RESERVATION TO WHATSAPP &rarr;</span>
                 </a>
 
                 <div>
-                    <button onclick="prevStep(5)" class="text-xs font-medium text-slate-500 hover:text-slate-800 underline">Review or Edit Details</button>
+                    <button onclick="prevStep(5)" class="text-[11px] font-medium text-slate-500 hover:text-slate-800 underline">Edit Booking Details</button>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- Map & Location Footer -->
-    <footer class="bg-stone-900 text-stone-400 py-12 px-4 border-t border-stone-800 mt-12">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-stone-300 py-12 px-4 border-t border-amber-900/40">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-xs">
             <div>
-                <h4 class="text-white text-lg font-bold mb-3">Sri Poorna Anugraha Mini Hall</h4>
-                <p class="text-sm leading-relaxed mb-4">4/224, Thangavel Street, NGGO Colony, Thudiyalur, Coimbatore - 641022</p>
-                <p class="text-sm">Phone / WhatsApp: <a href="tel:9442071354" class="text-amber-400 font-semibold">9442071354</a></p>
+                <h5 class="text-white text-sm font-bold font-serif mb-3">Sri Poorna Anugraha Mini Hall</h5>
+                <p class="leading-relaxed text-stone-400">Premier venue for Birthday Parties, Family Get-Togethers, Sacred Ceremonies, Receptions, and Corporate Functions in Thudiyalur.</p>
             </div>
             <div>
-                <iframe class="w-full h-48 rounded-xl border border-stone-700" src="https://maps.google.com/maps?q=Sri%20Poorna%20Anugraha%20mini%20hall%20Thudiyalur&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+                <h5 class="text-white text-sm font-bold mb-3">Venue Location</h5>
+                <p class="leading-relaxed text-stone-400">4/224, Thangavel Street, NGGO Colony, Thudiyalur, Coimbatore - 641022</p>
+            </div>
+            <div>
+                <h5 class="text-white text-sm font-bold mb-3">Direct Inquiries</h5>
+                <p class="leading-relaxed text-stone-400">Phone / WhatsApp: <a href="tel:9442071354" class="text-amber-300 font-bold">9442071354</a></p>
+            </div>
+            <div>
+                <h5 class="text-white text-sm font-bold mb-3">Quick Navigation</h5>
+                <ul class="space-y-1.5 text-stone-400">
+                    <li><a href="#spaces" class="hover:text-white">Banquet & Grand Hall</a></li>
+                    <li><a href="#accessibility" class="hover:text-white">Arrival & Transit</a></li>
+                    <li><a href="#reservation" class="hover:text-white">Reserve Online</a></li>
+                </ul>
             </div>
         </div>
-        <div class="max-w-6xl mx-auto px-4 mt-8 pt-6 border-t border-stone-800 text-xs text-center">
+        <div class="max-w-6xl mx-auto px-4 mt-8 pt-6 border-t border-stone-800 text-[11px] text-center text-stone-500">
             &copy; 2026 Sri Poorna Anugraha Mini Hall. All rights reserved.
         </div>
     </footer>
@@ -405,7 +638,7 @@
             if (!carousel) return;
 
             let autoScrollTimer = null;
-            const scrollStep = 270;
+            const scrollStep = 290;
 
             function startAutoScroll() {
                 autoScrollTimer = setInterval(() => {
@@ -464,12 +697,12 @@
                 const isBooked = bookedDates.includes(formattedDate);
                 const isSelected = bookingData.date === formattedDate;
 
-                let classNames = "p-3 text-center text-sm font-bold rounded-xl cursor-pointer transition ";
+                let classNames = "p-3 text-center text-xs font-bold rounded-xl cursor-pointer transition ";
                 
                 if (isBooked) {
                     classNames += "bg-red-100 text-red-500 cursor-not-allowed line-through";
                 } else if (isSelected) {
-                    classNames += "bg-amber-600 text-white shadow-md";
+                    classNames += "bg-brand-brown text-white shadow-md";
                 } else {
                     classNames += "bg-emerald-100 text-emerald-800 hover:bg-emerald-200";
                 }
@@ -490,18 +723,18 @@
             
             const btn = document.getElementById('btn-step-1');
             btn.disabled = false;
-            btn.className = "bg-amber-800 hover:bg-amber-900 text-white font-bold px-6 py-3 rounded-xl transition cursor-pointer";
+            btn.className = "bg-brand-brown hover:bg-brand-dark text-white font-bold px-6 py-3 rounded-xl transition cursor-pointer text-xs";
         }
 
         // 3. Selection Handlers
         function selectHall(hallName) {
             bookingData.hall = hallName;
-            document.getElementById('hall-option-1').className = hallName.includes('First') ? "border-2 border-amber-800 bg-amber-50 p-5 rounded-2xl cursor-pointer" : "border-2 border-stone-200 p-5 rounded-2xl cursor-pointer";
-            document.getElementById('hall-option-2').className = hallName.includes('Second') ? "border-2 border-amber-800 bg-amber-50 p-5 rounded-2xl cursor-pointer" : "border-2 border-stone-200 p-5 rounded-2xl cursor-pointer";
+            document.getElementById('hall-option-1').className = hallName.includes('First') ? "border-2 border-brand-brown bg-amber-50 p-5 rounded-2xl cursor-pointer" : "border-2 border-stone-200 p-5 rounded-2xl cursor-pointer";
+            document.getElementById('hall-option-2').className = hallName.includes('Second') ? "border-2 border-brand-brown bg-amber-50 p-5 rounded-2xl cursor-pointer" : "border-2 border-stone-200 p-5 rounded-2xl cursor-pointer";
 
             const btn = document.getElementById('btn-step-2');
             btn.disabled = false;
-            btn.className = "bg-amber-800 hover:bg-amber-900 text-white font-bold px-6 py-3 rounded-xl transition cursor-pointer";
+            btn.className = "bg-brand-brown hover:bg-brand-dark text-white font-bold px-6 py-3 rounded-xl transition cursor-pointer text-xs";
         }
 
         function selectDecor(decorName) {
@@ -509,23 +742,23 @@
             
             const extBtn = document.getElementById('decor-option-external');
             if (decorName === 'Bringing External Decorator') {
-                extBtn.className = "w-full border-2 border-amber-800 bg-amber-50 p-4 rounded-2xl text-left transition flex justify-between items-center";
-                document.querySelectorAll('.decor-card').forEach(el => el.classList.remove('border-amber-800', 'bg-amber-50'));
+                extBtn.className = "w-full border-2 border-brand-brown bg-amber-50 p-4 rounded-2xl text-left transition flex justify-between items-center";
+                document.querySelectorAll('.decor-card').forEach(el => el.classList.remove('border-brand-brown', 'bg-amber-50'));
             } else {
-                extBtn.className = "w-full border-2 border-stone-200 p-4 rounded-2xl text-left hover:border-amber-700 transition flex justify-between items-center";
+                extBtn.className = "w-full border-2 border-stone-200 p-4 rounded-2xl text-left hover:border-brand-brown transition flex justify-between items-center";
                 document.querySelectorAll('.decor-card').forEach(el => {
-                    el.className = "decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-amber-700 transition p-1 bg-white";
+                    el.className = "decor-card border-2 border-stone-200 rounded-xl overflow-hidden cursor-pointer hover:border-brand-brown transition p-1 bg-white";
                 });
                 const cardId = `decor-card-${decorName.toLowerCase().replace(/\s+/g, '-')}`;
                 const card = document.getElementById(cardId);
                 if (card) {
-                    card.className = "decor-card border-2 border-amber-800 bg-amber-50 rounded-xl overflow-hidden cursor-pointer transition p-1";
+                    card.className = "decor-card border-2 border-brand-brown bg-amber-50 rounded-xl overflow-hidden cursor-pointer transition p-1";
                 }
             }
 
             const btn = document.getElementById('btn-step-3');
             btn.disabled = false;
-            btn.className = "bg-amber-800 hover:bg-amber-900 text-white font-bold px-6 py-3 rounded-xl transition cursor-pointer";
+            btn.className = "bg-brand-brown hover:bg-brand-dark text-white font-bold px-6 py-3 rounded-xl transition cursor-pointer text-xs";
         }
 
         function validateStep4() {
@@ -537,10 +770,10 @@
             const btn = document.getElementById('btn-step-4');
             if (name && purpose) {
                 btn.disabled = false;
-                btn.className = "bg-amber-800 hover:bg-amber-900 text-white font-bold px-6 py-3 rounded-xl transition cursor-pointer";
+                btn.className = "bg-brand-brown hover:bg-brand-dark text-white font-bold px-6 py-3 rounded-xl transition cursor-pointer text-xs";
             } else {
                 btn.disabled = true;
-                btn.className = "bg-stone-300 text-slate-500 font-bold px-6 py-3 rounded-xl cursor-not-allowed";
+                btn.className = "bg-stone-300 text-slate-500 font-bold px-6 py-3 rounded-xl cursor-not-allowed text-xs";
             }
         }
 
@@ -554,7 +787,7 @@
 
             const dots = document.getElementById('step-dots').children;
             for (let i = 0; i < dots.length; i++) {
-                dots[i].className = i < step ? "w-3 h-3 rounded-full bg-amber-800" : "w-3 h-3 rounded-full bg-stone-300";
+                dots[i].className = i < step ? "w-3 h-3 rounded-full bg-brand-brown" : "w-3 h-3 rounded-full bg-stone-300";
             }
 
             if (step === 5) {
