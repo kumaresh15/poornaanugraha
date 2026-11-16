@@ -403,6 +403,7 @@
     </footer>
 
     <!-- Script Logic -->
+ <!-- Script Logic -->
     <script>
         let bookingData = {
             date: '',
@@ -432,6 +433,8 @@
         function renderCalendar() {
             const grid = document.getElementById('calendar-grid');
             const monthYearLabel = document.getElementById('calendar-month-year');
+            if (!grid || !monthYearLabel) return;
+            
             grid.innerHTML = '';
 
             const firstDayIndex = new Date(currentYear, currentMonth, 1).getDay();
@@ -572,9 +575,9 @@
 
         function showStep(step) {
             for (let i = 1; i <= 6; i++) {
-                document. = document.getElementById(`step-${i}`);
-                if (document.getElementById(`step-${i}`)) {
-                    document.getElementById(`step-${i}`).classList.add('hidden');
+                const stepEl = document.getElementById(`step-${i}`);
+                if (stepEl) {
+                    stepEl.classList.add('hidden');
                 }
                 const indicator = document.getElementById(`indicator-${i}`);
                 if (indicator) {
