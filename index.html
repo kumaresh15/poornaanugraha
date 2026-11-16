@@ -400,7 +400,7 @@
             purpose: ''
         };
 
-      function nextStep(step) {
+        function nextStep(step) {
             if (step === 2) {
                 bookingData.date = document.getElementById('selected-date').value;
                 if (!bookingData.date) {
@@ -430,23 +430,18 @@
                 }
             }
             if (step === 5) {
-                bookingData.name = document.getElementById('cust-name').value;
-                bookingData.purpose = document.getElementById('cust-purpose').value;
-                if (!bookingData.name || !bookingData.purpose) {
+                const nameInput = document.getElementById('cust-name').value.trim();
+                const purposeInput = document.getElementById('cust-purpose').value.trim();
+
+                if (!nameInput || !purposeInput) {
                     alert('Please enter your name and function purpose.');
                     return;
                 }
-                
-                // Populate Review screen when entering Step 5
-                document.getElementById('review-name').innerText = bookingData.name;
-                document.getElementById('review-purpose').innerText = bookingData.purpose;
-                document.getElementById('review-date').innerText = bookingData.date;
-                document.getElementById('review-hall').innerText = bookingData.hall;
-                document.getElementById('review-decor').innerText = bookingData.decor;
-            }
 
+                bookingData.name = nameInput;
+                bookingData.purpose = purposeInput;
+            }
             if (step === 6) {
-                // Generate WhatsApp Link when proceeding to Step 6
                 const message = `Hello Sri Poorna Anugraha Mini Hall!\n\nI would like to book the venue with the following details:\n- Name: ${bookingData.name}\n- Purpose: ${bookingData.purpose}\n- Date: ${bookingData.date}\n- Hall: ${bookingData.hall}\n- Decor: ${bookingData.decor}\n\nPlease confirm availability.`;
                 const encoded = encodeURIComponent(message);
                 document.getElementById('whatsapp-link').href = `https://wa.me/919442071354?text=${encoded}`;
@@ -454,6 +449,7 @@
 
             showStep(step);
         }
+
         function prevStep(step) {
             showStep(step);
         }
@@ -462,7 +458,7 @@
             bookingData.hall = hallName;
             const radios = document.getElementsByName('hall');
             for (let r of radios) {
-                if (r.value === hallName || (hallName.includes('First') && r.value === 'First Floor') || (hallName.includes('Second') && r.value === 'Second Floor with Stage') || (hallName.includes('Both') && r.value === 'Both Floors')) {
+                if (r.value === hallName || hallName.includes(r.value)) {
                     r.checked = true;
                 }
             }
@@ -472,15 +468,31 @@
             bookingData.decor = decorName;
         }
 
+        function updateReviewSummary() {
+            document.getElementById('review-name').innerText = bookingData.name || '-';
+            document.getElementById('review-purpose').innerText = bookingData.purpose || '-';
+            document.getElementById('review-date').innerText = bookingData.date || '-';
+            document.getElementById('review-hall').innerText = bookingData.hall || '-';
+            document.getElementById('review-decor').innerText = bookingData.decor || '-';
+        }
+
         function showStep(step) {
             for (let i = 1; i <= 6; i++) {
                 document.getElementById(`step-${i}`).classList.add('hidden');
                 const indicator = document.getElementById(`indicator-${i}`);
-                indicator.classList.remove('text-amber-800', 'bg-amber-100', 'font-bold');
+                if (indicator) {
+                    indicator.classList.remove('text-amber-800', 'bg-amber-100', 'font-bold');
+                }
             }
             document.getElementById(`step-${step}`).classList.remove('hidden');
             const activeIndicator = document.getElementById(`indicator-${step}`);
-            activeIndicator.classList.add('text-amber-800', 'bg-amber-100', 'font-bold');
+            if (activeIndicator) {
+                activeIndicator.classList.add('text-amber-800', 'bg-amber-100', 'font-bold');
+            }
+
+            if (step === 5) {
+                updateReviewSummary();
+            }
         }
     </script>
 </body>
