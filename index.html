@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .calendar-day { transition: all 0.2s ease; }
     </style>
 </head>
 <body class="bg-stone-50 text-slate-800 antialiased selection:bg-amber-500 selection:text-white">
@@ -68,7 +69,6 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
-            <!-- 1st Floor Card -->
             <div class="bg-white rounded-3xl p-8 shadow-xs border border-stone-200/80 flex flex-col justify-between hover:shadow-md transition">
                 <div>
                     <div class="w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center text-2xl mb-6">🏢</div>
@@ -81,7 +81,6 @@
                 </ul>
             </div>
 
-            <!-- 2nd Floor Card -->
             <div class="bg-white rounded-3xl p-8 shadow-sm border-2 border-amber-600/60 flex flex-col justify-between hover:shadow-md transition relative">
                 <span class="absolute top-6 right-6 bg-amber-100 text-amber-900 text-xs font-bold px-3 py-1 rounded-full">Most Popular</span>
                 <div>
@@ -96,7 +95,6 @@
                 </ul>
             </div>
 
-            <!-- Dining & Amenities -->
             <div class="bg-white rounded-3xl p-8 shadow-xs border border-stone-200/80 flex flex-col justify-between hover:shadow-md transition">
                 <div>
                     <div class="w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center text-2xl mb-6">🍽️</div>
@@ -144,7 +142,6 @@
                 </div>
             </div>
 
-            <!-- Google Maps Embed -->
             <div class="border border-stone-200 rounded-3xl overflow-hidden shadow-sm">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.296249526244!2d76.942724073557!3d11.091284253310238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8f7bb56689685%3A0x55c952dcf3694b17!2sSri%20Poorna%20Anugraha%20mini%20hall!5e0!3m2!1sen!2sin!4v1794824191226!5m2!1sen!2sin" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
@@ -170,31 +167,46 @@
                 <span id="indicator-6" class="px-3 py-1.5">6. WhatsApp</span>
             </div>
 
-            <!-- STEP 1: DATE & GOOGLE CALENDAR -->
+            <!-- STEP 1: CUSTOM COLOR-CODED SEAT-SELECTION CALENDAR -->
             <div id="step-1" class="booking-step">
                 <h3 class="text-2xl font-bold text-slate-900 mb-2">Step 1: Check Date Availability</h3>
-                <p class="text-slate-600 text-sm mb-8">Select your desired function date. Already booked dates will be automatically flagged.</p>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-sm font-semibold text-slate-700 mb-2">Select Date:</label>
-                        <input type="date" id="selected-date" class="w-full border border-stone-300 rounded-2xl p-4 text-slate-800 focus:ring-2 focus:ring-amber-600 focus:outline-none bg-stone-50/50">
+                <p class="text-slate-600 text-sm mb-6">Green dates are available for booking. Red dates are already booked.</p>
+                
+                <!-- Legend -->
+                <div class="flex items-center space-x-6 mb-6 p-4 bg-stone-50 rounded-2xl border border-stone-200 text-sm">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-4 h-4 rounded-md bg-emerald-500 inline-block"></span>
+                        <span class="text-slate-700 font-medium">Available</span>
                     </div>
-                    <div class="bg-amber-50/40 p-5 rounded-2xl border border-amber-200/60 text-sm flex flex-col justify-center space-y-2">
-                        <div class="flex items-center space-x-3">
-                            <span class="w-3.5 h-3.5 rounded-full bg-emerald-500 inline-block shadow-xs"></span>
-                            <span class="text-slate-700 font-medium"><strong>Green:</strong> Available for Booking</span>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <span class="w-3.5 h-3.5 rounded-full bg-rose-500 inline-block shadow-xs"></span>
-                            <span class="text-slate-700 font-medium"><strong>Red:</strong> Already Booked</span>
-                        </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="w-4 h-4 rounded-md bg-rose-500 inline-block"></span>
+                        <span class="text-slate-700 font-medium">Booked</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="w-4 h-4 rounded-md bg-amber-600 inline-block"></span>
+                        <span class="text-slate-700 font-medium">Selected</span>
                     </div>
                 </div>
-                <!-- Embedded Google Calendar View (Updated with poornaanugrahaminihall@gmail.com) -->
-                <div class="mt-6 border border-stone-200 rounded-2xl overflow-hidden shadow-xs">
-                    <iframe src="https://calendar.google.com/calendar/embed?src=poornaanugrahaminihall%40gmail.com&ctz=Asia%2FKolkata" style="border: 0" width="100%" height="320" frameborder="0" scrolling="no"></iframe>
+
+                <!-- Custom Calendar Widget Container -->
+                <div class="border border-stone-200 rounded-3xl p-6 bg-white shadow-xs">
+                    <div class="flex justify-between items-center mb-6">
+                        <button onclick="changeMonth(-1)" class="p-2 hover:bg-stone-100 rounded-xl text-slate-700 font-bold">&larr; Prev</button>
+                        <h4 id="calendar-month-year" class="font-bold text-slate-900 text-lg"></h4>
+                        <button onclick="changeMonth(1)" class="p-2 hover:bg-stone-100 rounded-xl text-slate-700 font-bold">Next &rarr;</button>
+                    </div>
+
+                    <div class="grid grid-cols-7 gap-2 text-center text-xs font-bold text-slate-400 mb-3">
+                        <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                    </div>
+                    
+                    <div id="calendar-grid" class="grid grid-cols-7 gap-2">
+                        <!-- Dynamically generated days go here -->
+                    </div>
                 </div>
-                <div class="mt-8 flex justify-end">
+
+                <div class="mt-8 flex justify-between items-center">
+                    <p id="selected-date-display" class="text-sm font-semibold text-amber-900">No date selected</p>
                     <button onclick="nextStep(2)" class="bg-amber-700 hover:bg-amber-800 text-white font-semibold px-7 py-3 rounded-2xl transition shadow-sm">Next: Choose Hall &rarr;</button>
                 </div>
             </div>
@@ -400,35 +412,93 @@
             purpose: ''
         };
 
-        // Optional: Replace with your Google Apps Script Web App URL once deployed
-        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyzIq36o27t6IZZ_gy8bBD-3ob29Q2l245Fm1yiXnEj_6Xy9ElaeWmfh4KOwPdMQlnH/exec'; 
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyzIq36o27t6IZZ_gy8bBD-3ob29Q2l245Fm1yiXnEj_6Xy9ElaeWmfh4KOwPdMQlnH/exec';
+        let bookedDatesList = [];
+        let currentMonth = new Date().getMonth();
+        let currentYear = new Date().getFullYear();
 
-        async function fetchBookedDates() {
-            if (!APPS_SCRIPT_URL) return;
+        async function fetchBookedDatesAndRender() {
             try {
-                const response = await fetch(APPS_SCRIPT_URL);
-                const bookedDates = await response.json();
-                
-                const dateInput = document.getElementById('selected-date');
-                dateInput.addEventListener('change', function(e) {
-                    const selected = e.target.value;
-                    if (bookedDates.includes(selected)) {
-                        alert('⚠️ This date is already booked on our calendar! Please choose another date.');
-                        e.target.value = '';
-                    }
-                });
+                if (APPS_SCRIPT_URL) {
+                    const response = await fetch(APPS_SCRIPT_URL);
+                    bookedDatesList = await response.json();
+                }
             } catch (error) {
-                console.error('Could not load calendar availability sync', error);
+                console.error('Could not load availability', error);
+            }
+            renderCalendar();
+        }
+
+        function renderCalendar() {
+            const grid = document.getElementById('calendar-grid');
+            const monthYearLabel = document.getElementById('calendar-month-year');
+            grid.innerHTML = '';
+
+            const firstDayIndex = new Date(currentYear, currentMonth, 1).getDay();
+            const totalDays = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+            const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            monthYearLabel.innerText = `${monthNames[currentMonth]} ${currentYear}`;
+
+            // Blank padding for days before the 1st of the month
+            for (let i = 0; i < firstDayIndex; i++) {
+                const emptyCell = document.createElement('div');
+                grid.appendChild(emptyCell);
+            }
+
+            // Render days of the month
+            for (let day = 1; day <= totalDays; day++) {
+                const dateStr = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                
+                const cell = document.createElement('button');
+                cell.type = 'button';
+                cell.className = 'calendar-day p-3 rounded-2xl text-sm font-bold flex items-center justify-center h-12 shadow-xs';
+
+                const isBooked = bookedDatesList.includes(dateStr);
+                const isSelected = bookingData.date === dateStr;
+
+                if (isSelected) {
+                    cell.classList.add('bg-amber-600', 'text-white', 'ring-2', 'ring-amber-800');
+                    cell.innerText = day;
+                } else if (isBooked) {
+                    cell.classList.add('bg-rose-500', 'text-white', 'cursor-not-allowed', 'opacity-90');
+                    cell.innerText = day;
+                    cell.title = 'Already Booked';
+                    cell.disabled = true;
+                } else {
+                    cell.classList.add('bg-emerald-500', 'hover:bg-emerald-600', 'text-white', 'cursor-pointer');
+                    cell.innerText = day;
+                    cell.onclick = () => selectDate(dateStr);
+                }
+
+                grid.appendChild(cell);
             }
         }
 
-        window.addEventListener('DOMContentLoaded', fetchBookedDates);
+        function changeMonth(direction) {
+            currentMonth += direction;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            } else if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            renderCalendar();
+        }
+
+        function selectDate(dateStr) {
+            bookingData.date = dateStr;
+            document.getElementById('selected-date-display').innerText = `Selected Date: ${dateStr}`;
+            renderCalendar();
+        }
+
+        window.addEventListener('DOMContentLoaded', fetchBookedDatesAndRender);
 
         function nextStep(step) {
             if (step === 2) {
-                bookingData.date = document.getElementById('selected-date').value;
                 if (!bookingData.date) {
-                    alert('Please select a date for your function.');
+                    alert('Please select an available green date from the calendar.');
                     return;
                 }
             }
@@ -502,7 +572,10 @@
 
         function showStep(step) {
             for (let i = 1; i <= 6; i++) {
-                document.getElementById(`step-${i}`).classList.add('hidden');
+                document. = document.getElementById(`step-${i}`);
+                if (document.getElementById(`step-${i}`)) {
+                    document.getElementById(`step-${i}`).classList.add('hidden');
+                }
                 const indicator = document.getElementById(`indicator-${i}`);
                 if (indicator) {
                     indicator.classList.remove('text-amber-800', 'bg-amber-100', 'font-bold');
