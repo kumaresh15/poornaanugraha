@@ -400,7 +400,7 @@
             purpose: ''
         };
 
-        function nextStep(step) {
+      function nextStep(step) {
             if (step === 2) {
                 bookingData.date = document.getElementById('selected-date').value;
                 if (!bookingData.date) {
@@ -429,7 +429,7 @@
                     return;
                 }
             }
-            if (step === 6) {
+            if (step === 5) {
                 bookingData.name = document.getElementById('cust-name').value;
                 bookingData.purpose = document.getElementById('cust-purpose').value;
                 if (!bookingData.name || !bookingData.purpose) {
@@ -437,7 +437,7 @@
                     return;
                 }
                 
-                // Populate Review screen
+                // Populate Review screen when entering Step 5
                 document.getElementById('review-name').innerText = bookingData.name;
                 document.getElementById('review-purpose').innerText = bookingData.purpose;
                 document.getElementById('review-date').innerText = bookingData.date;
@@ -445,8 +445,8 @@
                 document.getElementById('review-decor').innerText = bookingData.decor;
             }
 
-            if (step === 6 && document.getElementById('step-5').classList.contains('hidden') === false) {
-                // Generate WhatsApp Link
+            if (step === 6) {
+                // Generate WhatsApp Link when proceeding to Step 6
                 const message = `Hello Sri Poorna Anugraha Mini Hall!\n\nI would like to book the venue with the following details:\n- Name: ${bookingData.name}\n- Purpose: ${bookingData.purpose}\n- Date: ${bookingData.date}\n- Hall: ${bookingData.hall}\n- Decor: ${bookingData.decor}\n\nPlease confirm availability.`;
                 const encoded = encodeURIComponent(message);
                 document.getElementById('whatsapp-link').href = `https://wa.me/919442071354?text=${encoded}`;
@@ -454,7 +454,6 @@
 
             showStep(step);
         }
-
         function prevStep(step) {
             showStep(step);
         }
