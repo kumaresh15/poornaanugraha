@@ -187,13 +187,17 @@
             <!-- STEP 1: CUSTOM COLOR-CODED SEAT-SELECTION CALENDAR -->
             <div id="step-1" class="booking-step">
                 <h3 class="font-display text-2xl font-bold text-[#1b1c1a] mb-2">Step 1: Check Date Availability</h3>
-                <p class="text-[#504536] text-sm mb-6">Green dates are available for booking. Red dates are already booked.</p>
+                <p class="text-[#504536] text-sm mb-6">Green dates are available. Yellow dates are on tentative hold (in demand). Red dates are booked.</p>
 
                 <!-- Legend -->
-                <div class="flex items-center space-x-6 mb-6 p-4 bg-[#f5f3ef] rounded-[8px] text-sm">
+                <div class="flex items-center space-x-6 mb-6 p-4 bg-[#f5f3ef] rounded-[8px] text-sm flex-wrap gap-y-2">
                     <div class="flex items-center space-x-2">
                         <span class="w-4 h-4 rounded-[3px] bg-emerald-500 inline-block"></span>
                         <span class="text-[#504536] font-medium">Available</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="w-4 h-4 rounded-[3px] bg-amber-400 inline-block"></span>
+                        <span class="text-[#504536] font-medium">In Demand / Hold</span>
                     </div>
                     <div class="flex items-center space-x-2">
                         <span class="w-4 h-4 rounded-[3px] bg-rose-500 inline-block"></span>
@@ -440,7 +444,7 @@
         };
 
         const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyzIq36o27t6IZZ_gy8bBD-3ob29Q2l245Fm1yiXnEj_6Xy9ElaeWmfh4KOwPdMQlnH/exec';
-        let bookedDatesList = [];
+        let calendarEventsMap = {}; // Changed to store status mapping per date string
         let currentMonth = new Date().getMonth();
         let currentYear = new Date().getFullYear();
 
@@ -448,7 +452,19 @@
             try {
                 if (APPS_SCRIPT_URL) {
                     const response = await fetch(APPS_SCRIPT_URL);
-                    bookedDatesList = await response.json();
+                    const data = await response.json();
+                    
+                    // Support both array of strings (legacy) or array of objects with status
+                    calendarEventsMap = {};
+                    if (Array.isArray(data)) {
+                        data.forEach(item => {
+                            if (typeof item === 'string') {
+                                calendarEventsMap[item] = 'BOOKED';
+                            } else if (item && item.date) {
+                                calendarEventsMap[item.date] = (item.status || 'BOOKED').toUpperCase();
+                            }
+                        });
+                    }
                 }
             } catch (error) {
                 console.error('Could not load availability', error);
@@ -483,17 +499,22 @@
                 cell.type = 'button';
                 cell.className = 'calendar-day p-3 rounded-[4px] text-sm font-bold flex items-center justify-center h-12 shadow-xs';
 
-                const isBooked = bookedDatesList.includes(dateStr);
+                const eventStatus = calendarEventsMap[dateStr]; // 'BOOKED', 'HOLD', etc.
                 const isSelected = bookingData.date === dateStr;
 
                 if (isSelected) {
                     cell.classList.add('bg-[#7c5400]', 'text-white', 'ring-2', 'ring-[#654300]');
                     cell.innerText = day;
-                } else if (isBooked) {
+                } else if (eventStatus === 'BOOKED') {
                     cell.classList.add('bg-rose-500', 'text-white', 'cursor-not-allowed', 'opacity-90');
                     cell.innerText = day;
                     cell.title = 'Already Booked';
                     cell.disabled = true;
+                } else if (eventStatus === 'HOLD' || eventStatus === 'INQUIRY' || eventStatus === 'TENTATIVE') {
+                    cell.classList.add('bg-amber-400', 'hover:bg-amber-500', 'text-stone-900', 'cursor-pointer');
+                    cell.innerText = day;
+                    cell.title = 'In Demand / Tentative Hold (Click to Inquire)';
+                    cell.onclick = () => selectDate(dateStr);
                 } else {
                     cell.classList.add('bg-emerald-500', 'hover:bg-emerald-600', 'text-white', 'cursor-pointer');
                     cell.innerText = day;
@@ -527,7 +548,7 @@
         function nextStep(step) {
             if (step === 2) {
                 if (!bookingData.date) {
-                    alert('Please select an available green date from the calendar.');
+                    alert('Please select an available green or yellow date from the calendar.');
                     return;
                 }
             }
