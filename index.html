@@ -375,7 +375,7 @@
             <!-- STEP 4: CUSTOMER DETAILS -->
             <div id="step-4" class="booking-step hidden">
                 <h3 class="font-display text-2xl font-bold text-[#1b1c1a] mb-2">Step 4: Your Details</h3>
-                <p class="text-[#504536] text-sm mb-8">Enter your name and function purpose. (Phone number not strictly required here).</p>
+                <p class="text-[#504536] text-sm mb-8">Enter your name, function purpose, and address. (Phone number not strictly required here).</p>
 
                 <div class="space-y-5 mb-8">
                     <div>
@@ -385,6 +385,10 @@
                     <div>
                         <label class="block text-sm font-semibold text-[#1b1c1a] mb-2">Purpose of Function / Event Type:</label>
                         <input type="text" id="cust-purpose" placeholder="e.g. Baby Shower, Reception, Birthday" class="w-full border border-[#d6d3d1] rounded-[8px] p-4 text-[#1b1c1a] focus:ring-2 focus:ring-[#7c5400] focus:outline-none bg-[#fbf9f5]">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-[#1b1c1a] mb-2">Customer Address:</label>
+                        <textarea id="cust-address" rows="3" placeholder="Door No, Street, Area, City" class="w-full border border-[#d6d3d1] rounded-[8px] p-4 text-[#1b1c1a] focus:ring-2 focus:ring-[#7c5400] focus:outline-none bg-[#fbf9f5] resize-none"></textarea>
                     </div>
                 </div>
 
@@ -407,6 +411,10 @@
                     <div class="flex justify-between border-b border-[#e7e5e4] pb-4">
                         <span class="text-[#504536] text-sm font-medium">Function Purpose:</span>
                         <strong id="review-purpose" class="text-[#1b1c1a] text-base">-</strong>
+                    </div>
+                    <div class="flex justify-between border-b border-[#e7e5e4] pb-4 gap-4">
+                        <span class="text-[#504536] text-sm font-medium shrink-0">Customer Address:</span>
+                        <strong id="review-address" class="text-[#1b1c1a] text-base text-right">-</strong>
                     </div>
                     <div class="flex justify-between border-b border-[#e7e5e4] pb-4">
                         <span class="text-[#504536] text-sm font-medium">Selected Date:</span>
@@ -475,7 +483,8 @@
             hall: '',
             decor: '',
             name: '',
-            purpose: ''
+            purpose: '',
+            address: ''
         };
 
         // Updated with your master web app deployment URL
@@ -609,6 +618,7 @@
             if (step === 5) {
                 const nameInput = document.getElementById('cust-name').value.trim();
                 const purposeInput = document.getElementById('cust-purpose').value.trim();
+                const addressInput = document.getElementById('cust-address').value.trim();
 
                 if (!nameInput || !purposeInput) {
                     alert('Please enter your name and function purpose.');
@@ -617,9 +627,10 @@
 
                 bookingData.name = nameInput;
                 bookingData.purpose = purposeInput;
+                bookingData.address = addressInput;
             }
             if (step === 6) {
-                // Automatically push website inquiry/hold payload to Apps Script backend
+                // Intentionally exclude address from the Google Sheets payload
                 const payload = {
                     id: 'web_lead_' + Date.now(),
                     clientName: bookingData.name,
@@ -631,7 +642,7 @@
                     totalAmount: 0,
                     advanceAmount: 0,
                     balanceAmount: 0,
-                    status: 'Inquiry / Tentative' // Automatically triggers HOLD state on the calendar
+                    status: 'Inquiry / Tentative'
                 };
 
                 fetch(APPS_SCRIPT_URL, {
@@ -641,7 +652,8 @@
                     body: JSON.stringify(payload)
                 });
 
-                const message = `Hello Sri Poorna Anugraha Mini Hall!\n\nI would like to book the venue with the following details:\n- Name: ${bookingData.name}\n- Purpose: ${bookingData.purpose}\n- Date: ${bookingData.date}\n- Hall: ${bookingData.hall}\n- Decor: ${bookingData.decor}\n\nPlease confirm availability.`;
+                const addressLine = bookingData.address ? `- Address: ${bookingData.address}\n` : '';
+                const message = `Hello Sri Poorna Anugraha Mini Hall!\n\nI would like to book the venue with the following details:\n- Name: ${bookingData.name}\n- Purpose: ${bookingData.purpose}\n${addressLine}- Date: ${bookingData.date}\n- Hall: ${bookingData.hall}\n- Decor: ${bookingData.decor}\n\nPlease confirm availability.`;
                 const encoded = encodeURIComponent(message);
                 document.getElementById('whatsapp-link').href = `https://wa.me/919442071354?text=${encoded}`;
             }
@@ -670,6 +682,7 @@
         function updateReviewSummary() {
             document.getElementById('review-name').innerText = bookingData.name || '-';
             document.getElementById('review-purpose').innerText = bookingData.purpose || '-';
+            document.getElementById('review-address').innerText = bookingData.address || '-';
             document.getElementById('review-date').innerText = bookingData.date || '-';
             document.getElementById('review-hall').innerText = bookingData.hall || '-';
             document.getElementById('review-decor').innerText = bookingData.decor || '-';
